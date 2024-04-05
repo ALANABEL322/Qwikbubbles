@@ -1,6 +1,6 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import styles from "./styles.css?inline";
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/shared/navbar/Navbar";
 
 
 export default component$(() => {

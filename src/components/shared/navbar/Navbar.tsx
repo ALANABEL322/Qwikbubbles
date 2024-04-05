@@ -1,8 +1,13 @@
-import { component$ } from "@builder.io/qwik";
-import { QwikLogo } from "../icons/qwik";
+import { component$, useTask$ } from "@builder.io/qwik";
+import { QwikLogo } from "../../icons/qwik";
 import styles from "./Navbar.module.css";
 
 export default component$(() => {
+  const coinGeckoApiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY;
+  useTask$(async () => {
+    console.log(coinGeckoApiKey);
+  });
+
   return (
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
