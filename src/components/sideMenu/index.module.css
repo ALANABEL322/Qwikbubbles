@@ -1,0 +1,16 @@
+.logo {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  z-index: 60;
+}
+
+.logo {
+  display: inline-block;
+  z-index: 60;
+}
+.logo a {
+  display: block;
+  z-index: 60;
+}
