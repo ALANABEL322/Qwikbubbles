@@ -1,16 +1,34 @@
 .logo {
-  align-items: center;
+  /* display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; */
+ justify-content: flex-start;
   display: flex;
-  gap: 12px;
-  justify-content: center;
-  z-index: 60;
+  flex-shrink: 0;
+  height: 4.375rem;
+  
 }
 
-.logo {
-  display: inline-block;
-  z-index: 60;
-}
 .logo a {
-  display: block;
-  z-index: 60;
+  /* display: block;
+  left: 0; */
+  padding: 1rem;
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 4.375rem);
+}
+
+.navbarMenu {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* overflow-x: visible;
+  overflow-y: auto; */
+  padding: 0 1rem;
 }
