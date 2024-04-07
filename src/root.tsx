@@ -6,6 +6,7 @@ import {
 } from "@builder.io/qwik-city";
 
 import "./global.css";
+import { RouterHead } from "./components/router-head";
 
 export default component$(() => {
   return (
@@ -13,6 +14,7 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <RouterHead />
         <ServiceWorkerRegister />
       </head>
       <body lang="en">
