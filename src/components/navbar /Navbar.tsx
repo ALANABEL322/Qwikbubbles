@@ -21,29 +21,31 @@ export default component$(() => {
   });
   //w-[84.4%]
   return (
-    <nav class="z-[1000] ml-auto flex h-20 w-full items-center  border-b border-[#0D2137] bg-[#09182A] px-6 py-9 lg:w-auto">
-      <div class="flex-1">
-        <div class="relative flex items-center">
-          <div class="absolute ml-80 flex w-[40%] justify-around ">
-            <input
-              type="text"
-              placeholder="Search for any token or wallet"
-              style={{ textDecoration: "#1C6271" }}
-              class="placeholder-[#1C6271]::placeholder w-full rounded-full border border-[#85b3db79] bg-[#06111D] p-2 px-4 py-3 pl-14 text-[#1C6271]  duration-300 hover:border-[#6c87d1cc] focus:placeholder-transparent "
-            />
-            <div class=" absolute inset-y-0 left-3 flex items-center pl-3">
-              {SearchIcon}
+    <div class="hidden lg:block">
+      <nav class="z-[1000] ml-auto flex h-20 w-full items-center border-b  border-[#0D2137] bg-[#09182A] px-6 py-9  lg:w-auto">
+        <div class="flex-1">
+          <div class="relative flex items-center">
+            <div class="absolute ml-80 flex w-[40%] justify-around ">
+              <input
+                type="text"
+                placeholder="Search for any token or wallet"
+                style={{ textDecoration: "#1C6271" }}
+                class="placeholder-[#1C6271]::placeholder w-full rounded-full border border-[#85b3db79] bg-[#06111D] p-2 px-4 py-3 pl-14 text-[#1C6271]  duration-300 hover:border-[#6c87d1cc] focus:placeholder-transparent "
+              />
+              <div class=" absolute inset-y-0 left-3 flex items-center pl-3">
+                {SearchIcon}
+              </div>
             </div>
+            <ul class="ml-auto flex items-center">
+              <li class=" flex cursor-pointer justify-end rounded-md border border-[#85b3db79] hover:border-[#6c87d1cc] ">
+                <button class="px-7 py-2 text-[#85B3DB] hover:text-blue-300">
+                  Login/Connect
+                </button>
+              </li>
+            </ul>
           </div>
-          <ul class="ml-auto flex items-center">
-            <li class=" flex cursor-pointer justify-end rounded-md border border-[#85b3db79] hover:border-[#6c87d1cc] ">
-              <button class="px-7 py-2 text-[#85B3DB] hover:text-blue-300">
-                Login/Connect
-              </button>
-            </li>
-          </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 });

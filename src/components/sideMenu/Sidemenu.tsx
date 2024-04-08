@@ -137,7 +137,7 @@ export default component$(() => {
   ];
 
   return (
-    <div class={[styles.sideMenu, "absolute z-10"]}>
+    <div class={[styles.sideMenu, "absolute z-10 hidden lg:block"]}>
       <div
         class={[
           styles.fixedWidhtMenu,
@@ -571,15 +571,9 @@ export default component$(() => {
                 <button class="truncate px-24 py-3 text-[18px] text-[#85B3DB] hover:text-blue-300">
                   Start Trial
                 </button>
-              </li>
-              {/* <li class="mt-2 border-t-4">
-                <div class=" rounded-md  bg-[#85b3db79] text-[#ffffff] hover:bg-[#6c87d1cc]">
-                  {ArrowToggleLeft}
-                </div>
-              </li> */}
+              </li>            
             </ul>
           </div>
-          {/**arrow toggle */}
         </div>
       </div>
     </div>
