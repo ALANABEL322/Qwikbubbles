@@ -10,7 +10,6 @@
 }
 
 .sideMenu {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,12 +25,5 @@
   flex-direction: column;
   height: 100%;
   position: relative;
-  /* z-index: 1;
-  overflow-x: visible;
-  overflow-y: auto; */
   padding: 0 1rem;
-}
-
-.subMenu {
-  /* position: absolute; */
 }
