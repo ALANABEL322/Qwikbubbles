@@ -1,0 +1,28 @@
+.containerTemplate {
+    align-items: flex-end;
+    background: #0D2035;
+    border-top: 0.0625rem solid #132a44;
+    bottom: 0;
+    /* display: none; */
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 16;
+  }
+  
+  .NavMovile {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 3.25rem;
+    justify-content: center;
+  }
+  .menuIcons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 23.75rem;
+    width: 100%;
+  }
