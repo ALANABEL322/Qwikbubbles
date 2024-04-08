@@ -19,6 +19,10 @@
   left: 0;
 }
 
+.fixedWidhtMenu {
+  width: 320px;
+}
+
 .Menu {
   align-items: center;
   display: flex;

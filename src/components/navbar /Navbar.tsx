@@ -19,17 +19,17 @@ export default component$(() => {
   useTask$(async () => {
     console.log(coinGeckoApiKey);
   });
-
+  //w-[84.4%]
   return (
-    <nav class="absolute right-0 z-[1000] ml-auto flex h-20 w-[84.4%] items-center border-b border-[#0D2137] bg-[#09182A] px-6 py-9">
+    <nav class="z-[1000] ml-auto flex h-20 w-full items-center  border-b border-[#0D2137] bg-[#09182A] px-6 py-9 lg:w-auto">
       <div class="flex-1">
         <div class="relative flex items-center">
-          <div class="relative w-1/3 ">
+          <div class="absolute ml-80 flex w-[40%] justify-around ">
             <input
               type="text"
               placeholder="Search for any token or wallet"
-              style={{textDecoration: "#1C6271"}}
-              class="pl-14 text-[#1C6271] placeholder-[#1C6271]::placeholder w-full rounded-full border border-[#85b3db79] bg-[#06111D] p-2 px-4 py-3  duration-300 hover:border-[#6c87d1cc] focus:placeholder-transparent "
+              style={{ textDecoration: "#1C6271" }}
+              class="placeholder-[#1C6271]::placeholder w-full rounded-full border border-[#85b3db79] bg-[#06111D] p-2 px-4 py-3 pl-14 text-[#1C6271]  duration-300 hover:border-[#6c87d1cc] focus:placeholder-transparent "
             />
             <div class=" absolute inset-y-0 left-3 flex items-center pl-3">
               {SearchIcon}

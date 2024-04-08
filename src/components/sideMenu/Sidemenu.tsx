@@ -2,6 +2,36 @@ import { $, component$, useSignal } from "@builder.io/qwik";
 import styles from "./index.module.css";
 import { Link } from "@builder.io/qwik-city";
 
+// const ArrowToggleLeft = (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     width="25"
+//     height="25"
+//     viewBox="0 0 24 24"
+//     class="hover:text-slate-200"
+//   >
+//     <path
+//       fill="#85B3DB"
+//       d="m9.55 12l7.35 7.35q.375.375.363.875t-.388.875t-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675t-.15-.75t.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388t.375.875t-.375.875z"
+//     />
+//   </svg>
+// );
+
+const StartTrialIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="25"
+    viewBox="0 0 24 24"
+    class="hover:text-slate-200"
+  >
+    <path
+      fill="#85B3DB"
+      d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
+    />
+  </svg>
+);
+
 interface ImageProps1 {
   src: string;
   width: number;
@@ -108,7 +138,12 @@ export default component$(() => {
 
   return (
     <div class={[styles.sideMenu, "absolute z-10"]}>
-      <div class="flex h-screen  w-[15.6%] flex-col bg-[#0F253D] ">
+      <div
+        class={[
+          styles.fixedWidhtMenu,
+          "flex h-screen  flex-col bg-[#0F253D]",
+        ]}
+      >
         <div class={[styles.logo, "mb-6 p-7"]}>
           <Link
             href="/"
@@ -132,23 +167,24 @@ export default component$(() => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
+                  width="25"
                   height="25"
                   viewBox="0 0 24 24"
-                  class="left-0 mr-5 flex justify-start"
+                  class="mb-1 mr-5 flex-shrink-0 items-center justify-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
+                    width="26"
                     height="25"
                     viewBox="0 0 24 24"
-                    class="left-0 mr-5 flex justify-start"
+                    class="mr-5 flex-shrink-0 items-center justify-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="30"
-                      height="30"
+                      width="25"
+                      height="25"
                       viewBox="0 0 32 32"
+                      class="flex-shrink-0 items-center justify-center"
                     >
                       <path
                         fill="currentColor"
@@ -250,8 +286,8 @@ export default component$(() => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="26"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 mr-3"
                 >
@@ -325,17 +361,16 @@ export default component$(() => {
               <button
                 type="button"
                 class={`relative mt-2 flex  items-center rounded-md py-4 pr-[60px] text-left text-sm font-medium text-white transition-colors duration-300 hover:bg-[#6590c209] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                id="options-menu-Research"
+                id="options-menu-Saved"
                 aria-haspopup="true"
-                aria-expanded={isOpenResearch.value ? "true" : "false"}
                 style={{
                   transition: "background-color 0.3s ease",
                 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 mr-4"
                 >
@@ -369,8 +404,8 @@ export default component$(() => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="29"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 mr-4"
                 >
@@ -444,17 +479,16 @@ export default component$(() => {
               <button
                 type="button"
                 class={`relative mt-2 flex items-center rounded-md py-4 pr-[60px] text-left text-sm font-medium text-white transition-colors duration-300 hover:bg-[#6590c209] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                id="options-menu-Research"
+                id="options-menu-porfolio"
                 aria-haspopup="true"
-                aria-expanded={isOpenResearch.value ? "true" : "false"}
                 style={{
                   transition: "background-color 0.3s ease",
                 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 "
                 >
@@ -474,17 +508,16 @@ export default component$(() => {
               <button
                 type="button"
                 class={`relative mt-2 flex items-center rounded-md py-4 pr-[60px] text-left text-sm font-medium text-white transition-colors duration-300 hover:bg-[#6590c209] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                id="options-menu-Research"
+                id="options-menu-settings"
                 aria-haspopup="true"
-                aria-expanded={isOpenResearch.value ? "true" : "false"}
                 style={{
                   transition: "background-color 0.3s ease",
                 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="32"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 mr-3"
                 >
@@ -503,17 +536,16 @@ export default component$(() => {
               <button
                 type="button"
                 class={`relative mt-2 flex items-center rounded-md py-4 pr-[60px] text-left text-sm font-medium text-white transition-colors duration-300 hover:bg-[#6590c209] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                id="options-menu-Research"
+                id="options-menu-devs"
                 aria-haspopup="true"
-                aria-expanded={isOpenResearch.value ? "true" : "false"}
                 style={{
                   transition: "background-color 0.3s ease",
                 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
+                  width="25"
+                  height="25"
                   viewBox="0 0 24 24"
                   class="ml-5 mr-4"
                 >
@@ -528,7 +560,26 @@ export default component$(() => {
                 </span>
               </button>
             </div>
+            {/**button start trial */}
           </div>
+          <div class="absolute bottom-10 left-5 flex flex-col items-center justify-center">
+            <div class="absolute inset-y-0 left-7 flex flex-col items-center justify-center pl-7">
+              <div class="group-hover:text-blue-300">{StartTrialIcon}</div>
+            </div>
+            <ul class="flex flex-col items-center justify-center">
+              <li class="flex cursor-pointer rounded-md border border-[#85b3db79] hover:border-[#6c87d1cc]">
+                <button class="truncate px-24 py-3 text-[18px] text-[#85B3DB] hover:text-blue-300">
+                  Start Trial
+                </button>
+              </li>
+              {/* <li class="mt-2 border-t-4">
+                <div class=" rounded-md  bg-[#85b3db79] text-[#ffffff] hover:bg-[#6c87d1cc]">
+                  {ArrowToggleLeft}
+                </div>
+              </li> */}
+            </ul>
+          </div>
+          {/**arrow toggle */}
         </div>
       </div>
     </div>
