@@ -1,21 +1,7 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
+
+import ImgMoralismoneylogotype431faf8b from '/public/fonts/MoralisMoneyLogotype.431faf8b.svg?jsx';import { $, component$, useSignal } from "@builder.io/qwik";
 import styles from "./index.module.css";
 import { Link } from "@builder.io/qwik-city";
-
-// const ArrowToggleLeft = (
-//   <svg
-//     xmlns="http://www.w3.org/2000/svg"
-//     width="25"
-//     height="25"
-//     viewBox="0 0 24 24"
-//     class="hover:text-slate-200"
-//   >
-//     <path
-//       fill="#85B3DB"
-//       d="m9.55 12l7.35 7.35q.375.375.363.875t-.388.875t-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675t-.15-.75t.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388t.375.875t-.375.875z"
-//     />
-//   </svg>
-// );
 
 const StartTrialIcon = (
   <svg
@@ -34,15 +20,11 @@ const StartTrialIcon = (
 
 interface ImageProps1 {
   src: string;
-  width: number;
-  height: number;
   alt: string;
 }
 
 interface ImageProps2 {
   src: string;
-  width: number;
-  height: number;
   alt: string;
 }
 
@@ -58,15 +40,11 @@ export default component$(() => {
 
   const ImageProps1: ImageProps1 = {
     src: "../../../public/fonts/MoralisMoneyLogomark.5b65b0d7.svg",
-    width: 50,
-    height: 50,
     alt: "logoMoralisMoney",
   };
 
   const ImageProps2: ImageProps2 = {
     src: "../../../public/fonts/MoralisMoneyLogotype.431faf8b.svg",
-    width: 80,
-    height: 50,
     alt: "logoMoralisMoney",
   };
 
@@ -139,10 +117,7 @@ export default component$(() => {
   return (
     <div class={[styles.sideMenu, "absolute z-10 hidden lg:block"]}>
       <div
-        class={[
-          styles.fixedWidhtMenu,
-          "flex h-screen  flex-col bg-[#0F253D]",
-        ]}
+        class={[styles.fixedWidhtMenu, "flex h-screen  flex-col bg-[#0F253D]"]}
       >
         <div class={[styles.logo, "mb-6 p-7"]}>
           <Link
@@ -150,8 +125,8 @@ export default component$(() => {
             title="moralismoney"
             class=" flex items-center justify-center gap-3 "
           >
-            <img {...ImageProps1} class="h-[35px] w-[45px] object-cover" />
-            <img {...ImageProps2} class="h-[26px] w-[180px] object-cover" />
+            <img {...ImageProps1} class=" object-cover" />
+            <ImgMoralismoneylogotype431faf8b {...ImageProps2} class=" object-cover" />
           </Link>
         </div>
         <div class="">
@@ -571,7 +546,7 @@ export default component$(() => {
                 <button class="truncate px-24 py-3 text-[18px] text-[#85B3DB] hover:text-blue-300">
                   Start Trial
                 </button>
-              </li>            
+              </li>
             </ul>
           </div>
         </div>
