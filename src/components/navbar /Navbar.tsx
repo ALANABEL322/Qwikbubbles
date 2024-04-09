@@ -24,7 +24,7 @@ export default component$(() => {
       <nav class="z-[1000] ml-auto flex h-20 w-full items-center border-b  border-[#0D2137] bg-[#09182A] px-6 py-9">
         <div class="flex-1">
           <div class="relative flex items-center">
-            <div class="absolute ml-80 flex w-[40%] justify-around ">
+            <div class="absolute ml-80 flex w-[30%] justify-around ">
               <input
                 type="text"
                 placeholder="Search for any token or wallet"
