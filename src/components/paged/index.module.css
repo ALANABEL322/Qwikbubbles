@@ -1,0 +1,27 @@
+.containerpaged {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 1rem;
+  position: absolute;
+  width: 100%;
+}
+
+.paged {
+  color: #007cf0;
+  fill: #007cf0;
+  font-family:
+    IBM Plex Sans,
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 auto;
+}

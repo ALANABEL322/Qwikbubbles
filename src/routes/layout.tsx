@@ -3,6 +3,7 @@ import styles from "./styles.css?inline";
 import Navbar from "../components/navbar /Navbar";
 import Sidemenu from "~/components/sideMenu/Sidemenu";
 import NavTemplateMovile from "../components/navtemplatemovile/NavTemplateMovile";
+import Paged from "~/components/paged/Paged";
 export default component$(() => {
   useStyles$(styles);
   return (
@@ -10,6 +11,7 @@ export default component$(() => {
       <Sidemenu />
       <Navbar />
       <NavTemplateMovile />
+      <Paged />
       <main>
         <Slot />
       </main>
