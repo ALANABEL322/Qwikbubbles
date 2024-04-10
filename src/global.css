@@ -17,5 +17,6 @@ body {
   margin: 0;
   /* line-height: inherit; */
   box-sizing: border-box;
-    overflow-y: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }

@@ -1,7 +1,6 @@
 /* THIS FILE IS JUST FOR EXAMPLES, DELETE IT IF YOU DON'T NEED IT */
 
 /* SHELL ---------------------------------------- */
-
 body {
   background: var(--qwik-dark-background);
   /* overflow-x: hidden; */
