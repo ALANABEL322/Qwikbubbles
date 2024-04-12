@@ -1,46 +1,51 @@
-# Qwikbubbles
-página web orientada al frontend
 
-## Vercel Edge
+# Moralis Money app
 
-This starter site is configured to deploy to [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions), which means it will be rendered at an edge location near to your users.
+Sitio sobre muestreo de cripto monedas a tiempo real 
 
-## Installation
 
-The adaptor will add a new `vite.config.ts` within the `adapters/` directory, and a new entry file will be created, such as:
 
-```
-└── adapters/
-    └── vercel-edge/
-        └── vite.config.ts
-└── src/
-    └── entry.vercel-edge.tsx
-```
+## Enlace       
 
-Additionally, within the `package.json`, the `build.server` script will be updated with the Vercel Edge build.
+https://qwikbubbles.vercel.app
 
-## Production build
 
-To build the application for production, use the `build` command, this command will automatically run `npm run build.server` and `npm run build.client`:
+## Caracteristicas
 
-```shell
-npm run build
-```
+- Realizado con framework qwik
+- Componentes renderizados del lado del cliente y servidor
+- Diseño responsive
+- Consumo de coingecko api
+- Consumo de libreria d3
+- Realizado con typescript - tailwindCSS
+- Desplegado en vercel
 
-[Read the full guide here](https://github.com/BuilderIO/qwik/blob/main/starters/adapters/vercel-edge/README.md)
+## Variables de entorno
 
-## Dev deploy
+Para que funcione en el entorno local, debes tener un archivo .env con las siguientes variables
 
-To deploy the application for development:
+`PUBLIC_COINGECKO_API_KEY`=valor-de-variable
 
-```shell
-npm run deploy
-```
+`PUBLIC_BASE_URL`=valor-de-variable
 
-Notice that you might need a [Vercel account](https://docs.Vercel.com/get-started/) in order to complete this step!
+`PUBLIC_CURRENCY`=valor-de-variable
 
-## Production deploy
+`PUBLIC_ORDER`=valor-de-variable
 
-The project is ready to be deployed to Vercel. However, you will need to create a git repository and push the code to it.
+`PUBLIC_PER_PAGE`=valor-de-variable
 
-You can [deploy your site to Vercel](https://vercel.com/docs/concepts/deployments/overview) either via a Git provider integration or through the Vercel CLI.
+`PUBLIC_PAGE`=valor-de-variable
+
+`PUBLIC_SPARKLINE`=valor-de-variable
+
+`PUBLIC_LOCALE`=valor-de-variable
+
+## Authors
+
+- [@Alan Pereyra](https://www.github.com/ALANABEL322)
+
+
+## Aclaraciones
+
+El renderizado de los datos en pantalla son tomados de la API coingecko y distribuidos por la libreria d3. Algunos metodos de animación fueron omitidos por tiempo e incompatibilidad con typescript. 
+
