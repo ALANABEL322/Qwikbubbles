@@ -4,6 +4,9 @@ import Navbar from "../components/navbar /Navbar";
 import Sidemenu from "~/components/sideMenu/Sidemenu";
 import NavTemplateMovile from "../components/navtemplatemovile/NavTemplateMovile";
 import Paged from "~/components/paged/Paged";
+// import BubblesChart, { dummyData } from "~/components/bubbles/BubblesChart";
+
+
 export default component$(() => {
   useStyles$(styles);
   return (
@@ -12,6 +15,7 @@ export default component$(() => {
       <Navbar />
       <NavTemplateMovile />
       <Paged />
+      {/* <BubblesChart data={dummyData} /> */}
       <main>
         <Slot />
       </main>
