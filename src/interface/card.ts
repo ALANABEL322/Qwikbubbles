@@ -1,4 +1,12 @@
 export interface Coingecko {
+    fy: number;
+    fx: number;
+    value: number;
+    size: number;
+    y: number;
+    x: number;
+    source: string | number | boolean | null;
+    color: string | number | boolean | readonly (string | number)[] | null;
     data: Coingecko[];
     id:                               string;
     symbol:                           string;
@@ -39,3 +47,4 @@ export enum Currency {
     Eth = "eth",
     Usd = "usd",
 }
+

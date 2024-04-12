@@ -1,63 +1,114 @@
 import { type DocumentHead } from "@builder.io/qwik-city";
-import { component$ } from "@builder.io/qwik";
+import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { getCoinGecko } from "~/api/coingecko";
+import * as d3 from "d3";
 
-// interface IDataBubble {
-//   id: string;
-//   image: string;
-//   current_price: number;
-//   name: string;
-// }
-
-// export const useCoinData = routeLoader$(async () => {
-//   const baseUrl = import.meta.env.PUBLIC_BASE_URL;
-//   const currency = import.meta.env.PUBLIC_CURRENCY;
-//   const order = import.meta.env.PUBLIC_ORDER;
-//   const perPage = import.meta.env.PUBLIC_PER_PAGE;
-//   const page = import.meta.env.PUBLIC_PAGE;
-//   const sparkline = import.meta.env.PUBLIC_SPARKLINE;
-//   const locale = import.meta.env.PUBLIC_LOCALE;
-//   const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY;
-
-//   const resp = await fetch(
-//     `${baseUrl}?vs_currency=${currency}&order=${order}&per_page=${perPage}&page=${page}&sparkline=${sparkline}&locale=${locale}&apiKey=${apiKey}`,
-//   );
-//   const data = await resp.json();
-//   console.log(data);
-//   return data;
-// });
+interface EstadoBurbuja {
+  datos: { nombre: string; valor: number; image: string }[];
+  radio: number;
+  offset: number;
+}
 
 export default component$(() => {
-  // const cardBubble = useStore<IDataBubble[]>([]);
+  const estadoBurbuja = useStore<EstadoBurbuja>({
+    datos: [],
+    radio: 50,
+    offset: 0,
+  });
 
-  return (
-    <>
-      {" "}
-      <h1 class="flex items-center justify-center text-9xl text-slate-50">
-        oooooooO
-      </h1>
-      {/* {cardBubble.map((bubble: IDataBubble, index: number) => (
-        <div key={index} class="flex items-center justify-center">
-          <div class="relative my-8 flex h-96 w-80 flex-col rounded-xl bg-white bg-clip-border pt-8 text-gray-700 shadow-md">
-            <img
-              src={bubble.image}
-              alt={`image-${index}`}
-              width={290}
-              height={40}
-              class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl text-white shadow-lg"
-            />
-            <div class="p-6">
-              <h3 class="text-blue-gray-900 mb-2 mt-4 block font-sans text-2xl font-semibold leading-snug tracking-normal antialiased">
-                {bubble.name}
-              </h3>
-              <p class="mt-4 block text-base font-medium leading-relaxed text-inherit text-red-500 antialiased">
-                {bubble.current_price}
-              </p>
-            </div>
+  useVisibleTask$(async () => {
+    const cards = await getCoinGecko({
+      number: 10,
+      offset: estadoBurbuja.offset,
+    });
+    const datos = cards.map((card) => ({
+      nombre: card.name,
+      valor: card.price_change_percentage_24h,
+      image: card.image,
+    }));
+    estadoBurbuja.datos = datos;
+    // eslint-disable-next-line qwik/valid-lexical-scope
+    updateBubbles();
+  });
+
+  function updateBubbles() {
+    const bubbles = d3
+      .select<HTMLDivElement, any>(".contenedor-burbujas")
+      .selectAll<
+        HTMLDivElement,
+        { nombre: string; valor: number; image: string }
+      >("div.burbuja")
+      .data(estadoBurbuja.datos);
+
+    bubbles.exit().remove();
+
+    const newBubbles = bubbles.enter().append("div").attr("class", "burbuja");
+
+    newBubbles
+      .merge(bubbles)
+      .style("width", estadoBurbuja.radio * 2 + "px")
+      .style("height", estadoBurbuja.radio * 2 + "px")
+      .style("borderRadius", estadoBurbuja.radio + "px")
+      .style("backgroundColor", (d: any) => getColor(d.valor))
+      .style(
+        "transform",
+        (d: any, i: number) =>
+          `translate(${getPosition(estadoBurbuja.datos.length, i)})`,
+      )
+      .html(
+        (d: any) =>
+          `<img src="${d.image}" alt="${d.nombre}" height="280" width="280"/><div>${d.nombre}</div>`,
+      );
+  }
+
+  function getPosition(
+    cantidadBurbujas: number,
+    indiceBurbuja: number,
+  ): string {
+    const angulo = (Math.PI * 2 * indiceBurbuja) / cantidadBurbujas;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    const x = viewportWidth / 2 + Math.cos(angulo) * (viewportWidth / 3);
+    const y = viewportHeight / 10 + Math.sin(angulo) * (viewportHeight / 3);
+
+    return `${x}px, ${y}px`;
+  }
+
+  function getColor(valor: number): string {
+    return valor > 0 ? "green" : "red";
+  }
+
+  const renderBubbles = () => {
+    return (
+      <div
+        class="contenedor-burbujas"
+        style={{ width: "100vw", height: "100vh" }}
+      >
+        <div id="my_dataviz"></div>
+        {estadoBurbuja.datos.map((item, index) => (
+          <div
+            key={index}
+            class="burbuja"
+            style={{
+              width: estadoBurbuja.radio * 2 + "px",
+              height: estadoBurbuja.radio * 2 + "px",
+              borderRadius: estadoBurbuja.radio + "px",
+              backgroundColor: getColor(item.valor),
+              transform: `translate(${getPosition(
+                estadoBurbuja.datos.length,
+                index,
+              )})`,
+            }}
+          >
+            <img src={item.image} alt={item.nombre} height={280} width={280} />
+            <div>{item.nombre}</div>
           </div>
-        </div>
-      ))} */}
-    </>
-  );
+        ))}
+      </div>
+    );
+  };
+  return renderBubbles();
 });
 
 export const head: DocumentHead = {
