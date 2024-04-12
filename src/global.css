@@ -8,14 +8,14 @@
   --qwik-light-purple: #ac7ff4;
   --qwik-dark-purple: #713fc2;
   --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #06111D;
+  --qwik-dark-background: #06111d;
   --qwik-dark-text: #ffffff;
 }
 
 body {
   padding: 0;
   margin: 0;
-
+  overflow-y: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
-
 }
