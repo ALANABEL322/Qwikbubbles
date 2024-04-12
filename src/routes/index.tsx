@@ -16,6 +16,7 @@ export default component$(() => {
     offset: 0,
   });
 
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(async () => {
     const cards = await getCoinGecko({
       number: 10,
